@@ -23,6 +23,10 @@
     <%= f.label :due_date %><br>
     <%= f.date_select :due_date, {:prompt => {:day => 'Επιλογή ημέρας', :month => 'Επιλογή μήνα', :year => 'Επιλογή έτους'}}, {:class => "date-select", } %>
   </div>
+  <div class="field">
+    <%= f.label :project %><br>
+    <%= f.collection_select(:project, Project.all, :id, :description, {}, {class: 'form-control'}) %>
+  </div>
   <div class="actions">
     <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
      <i class="icon-ok icon-white"></i> Save

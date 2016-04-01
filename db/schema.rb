@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160401173135) do
+ActiveRecord::Schema.define(version: 20160401173430) do
 
   create_table "projects", force: true do |t|
     t.string   "description"
@@ -19,12 +19,7 @@ ActiveRecord::Schema.define(version: 20160401173135) do
     t.datetime "updated_at"
   end
 
-  create_table "tasks", force: true do |t|
-    t.string   "title"
-    t.text     "summary"
-    t.date     "due_date"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+# Could not dump table "tasks" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
 end
