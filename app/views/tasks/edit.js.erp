@@ -1,0 +1,2 @@
+$("#show-tasks-edit-dialog").html("<%= escape_javascript(render 'edit_task', :object => @task) %>");
+$("#open-tasks-edit-dialog").modal('show');

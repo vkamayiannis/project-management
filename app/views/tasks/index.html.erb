@@ -1,12 +1,15 @@
 <h1>Tasks</h1>
 
+<div id="show-tasks-edit-dialog"></div>
+
 <table class = "table table-striped">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Summary</th>
+      <th>Τίτλος</th>
+      <th>Ανάλυση</th>
       <th>Project</th>
-      <th>Due date</th>
+      <th>Εώς ημερομηνία</th>
+      <th>Ημερομηνία δημιουργίας</th>
       <th colspan="2"></th>
     </tr>
   </thead>
@@ -15,11 +18,12 @@
     <% @tasks.each do |task| %>
       <tr>
         <td><%= link_to task.title, task %></td>
-        <td><%= link_to task.summary, task %></td>
+        <td class="col-md-3"><%= link_to task.summary[0..150]+'...', task %></td>
         <td><%= task.project.description if !task.project.nil? %></td>
         <td><%= link_to task.due_date.strftime("%d/%m/%Y"), task %></td>
-        <td><%= link_to 'Edit', edit_task_path(task), class: "btn btn-primary" %></td>
-        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+        <td><%= link_to task.created_at.strftime("%d/%m/%Y"), task %></td>
+        <td><%= link_to 'Επεξεργασία', edit_task_path(task, format: :js), {remote: true, class: "open-tasks-edit-dialog btn btn-primary"} %></td>
+        <td><%= link_to 'Διαγραφή', task, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +32,4 @@
 <br>
 <%= will_paginate @tasks, renderer: BootstrapPagination::Rails %>
 <br>
-<%= link_to 'New Task', new_task_path, class: "btn btn-primary" %>
+<%= link_to 'New Task', new_task_path, class: "btn btn-default" %>

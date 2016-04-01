@@ -1,6 +1,20 @@
-<h1>Editing task</h1>
+<div class="modal fade" id="tasks-edit-dialog" tabindex="-1" role="dialog">
+  <div class="modal-dialog" style="width: 800px; top: 50px">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Επιλογή Πελάτη/Προμηθευτή</h4>
+      </div>
+      <div class="modal-body">
+      	<h1>Editing task</h1>
 
-<%= render 'form' %>
+			<%= render 'form' %>
 
-<%= link_to 'Show', @task %> |
-<%= link_to 'Back', tasks_path %>
+			<%= link_to 'Show', @task %> |
+	  </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Κλείσιμο</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->	

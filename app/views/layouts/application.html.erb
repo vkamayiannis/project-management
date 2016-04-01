@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ProjectManagement</title>
+  <title>Project Management</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<table>
+		<td class="col-md-1"></td>
+		<td class="col-md-11"><%= yield %></td>
+		<td class="col-md-1"></td>
+	</table>
 
-<%= yield %>
+
 
 </body>
 </html>
