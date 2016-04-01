@@ -13,17 +13,19 @@
 
   <div class="field">
     <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :summary %><br>
-    <%= f.text_area :summary %>
+    <%= f.text_area :summary, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :due_date %><br>
-    <%= f.date_select :due_date %>
+    <%= f.date_select :due_date, {:prompt => {:day => 'Επιλογή ημέρας', :month => 'Επιλογή μήνα', :year => 'Επιλογή έτους'}}, {:class => "date-select", } %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+     <i class="icon-ok icon-white"></i> Save
+    <% end %>
   </div>
 <% end %>
