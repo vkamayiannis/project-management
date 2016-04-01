@@ -4,7 +4,7 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = Task.all.order(:due_date)
+    @tasks = Task.all.order(:due_date).paginate(:page => params[:page])
   end
 
   # GET /tasks/1

@@ -39,3 +39,4 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 gem 'coffee-script-source', '1.8.0'
 gem 'bootstrap-sass', '~> 3.2.0'
+gem 'will_paginate', '~> 3.0.6'
