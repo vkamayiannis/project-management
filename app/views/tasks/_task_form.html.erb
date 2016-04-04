@@ -28,12 +28,12 @@
             <%= f.text_area :summary, class: "form-control" %>
           </div>
           <div class="field">
-            <%= f.label :due_date %><br>
-            <%= f.text_field :due_date, class: "datepicker" %>
-          </div>
-          <div class="field">
             <%= f.label :project %><br>
             <%= f.collection_select(:project_id, Project.all, :id, :description, {include_blank: true}, {class: 'form-control'}) %>
+          </div>
+          <div class="field">
+            <%= f.label :due_date %><br>
+            <%= f.text_field :due_date, class: "form-control datepicker" %>
           </div>
           <div class="modal-footer">
             <div class="actions">

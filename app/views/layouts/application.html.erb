@@ -10,15 +10,15 @@
   <div class="row-fluid">
     <div class="span8 offset1">
       <div class="jumbotron">
-        <h1>Project management<h1>
+        <div class="text-center">
+          <h1>Project management</h1>
+        </div>
+          <div class="text-center">
+            <%= link_to 'New Task', new_task_path, class: "btn btn-primary", remote: true %>
+          </div>
       </div>
     </div>
   </div>
   <%= yield %>
-	<!--<table>
-		<td class="col-md-1"></td>
-    <td class="col-md-11"><%= yield %></td>
-		<td class="col-md-1"></td>
-	</table>-->
 </body>
 </html>
