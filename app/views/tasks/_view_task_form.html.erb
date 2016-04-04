@@ -1,0 +1,28 @@
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header bg-success">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h3 class="modal-title"><%= @task.title %></h3>
+    </div>
+    <div class = "modal-body">
+      <p>
+        <strong>Summary:</strong>
+        <%= simple_format(@task.summary, {}, wrapper_tag: "div") %>
+      </p>
+
+      <p>
+        <strong>Due date:</strong>
+        <%= @task.due_date.strftime("%d/%m/%Y") %>
+      </p>
+
+      <p>
+        <strong>Project:</strong>
+        <%= @task.project.description %>
+      </p>
+    </div>
+    <div class="modal-footer">
+      <div class="actions">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,3 @@
+m = $('#modal');
+m.html('<%= j(render partial: 'view_task_form', locals: {task: @task}) %>');
+m.modal('show');
