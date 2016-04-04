@@ -1,0 +1,49 @@
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4 class="modal-title">Δημιουργία task</h4>
+    </div>
+    <div class = "modal-body">
+      <%= form_for(@task) do |f| %>
+
+          <% if @task.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
+
+              <ul>
+              <% @task.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="field">
+            <%= f.label :title %><br>
+            <%= f.text_field :title, class: "form-control" %>
+          </div>
+          <div class="field">
+            <%= f.label :summary %><br>
+            <%= f.text_area :summary, class: "form-control" %>
+          </div>
+          <div class="field">
+            <%= f.label :due_date %><br>
+            <%= f.text_field :due_date, class: "datepicker" %>
+          </div>
+          <div class="field">
+            <%= f.label :project %><br>
+            <%= f.collection_select(:project_id, Project.all, :id, :description, {include_blank: true}, {class: 'form-control'}) %>
+          </div>
+          <div class="modal-footer">
+            <div class="actions">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+               <i class="icon-ok icon-white"></i> Save
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+</div>

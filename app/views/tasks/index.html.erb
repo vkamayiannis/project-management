@@ -1,6 +1,4 @@
-<h1>Tasks</h1>
-
-<div id="show-tasks-edit-dialog"></div>
+<h2>Tasks</h2 >
 
 <table class = "table table-striped">
   <thead>
@@ -22,7 +20,7 @@
         <td><%= task.project.description if !task.project.nil? %></td>
         <td><%= link_to task.due_date.strftime("%d/%m/%Y"), task %></td>
         <td><%= link_to task.created_at.strftime("%d/%m/%Y"), task %></td>
-        <td><%= link_to 'Επεξεργασία', edit_task_path(task, format: :js), {remote: true, class: "open-tasks-edit-dialog btn btn-primary"} %></td>
+        <td><%= link_to 'Επεξεργασία', edit_task_path(task), {class: "open-tasks-edit-dialog btn btn-primary"} %></td>
         <td><%= link_to 'Διαγραφή', task, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
       </tr>
     <% end %>
@@ -30,6 +28,9 @@
 </table>
 
 <br>
+
 <%= will_paginate @tasks, renderer: BootstrapPagination::Rails %>
 <br>
-<%= link_to 'New Task', new_task_path, class: "btn btn-default" %>
+<%= link_to 'New Task', new_task_path, class: "btn btn-default", remote: true %>
+<div class="modal fade" id="modal">
+</div>

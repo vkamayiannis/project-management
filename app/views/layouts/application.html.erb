@@ -7,13 +7,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<table>
+  <div class="row-fluid">
+    <div class="span8 offset1">
+      <div class="jumbotron">
+        <h1>Project management<h1>
+      </div>
+    </div>
+  </div>
+  <%= yield %>
+	<!--<table>
 		<td class="col-md-1"></td>
-		<td class="col-md-11"><%= yield %></td>
+    <td class="col-md-11"><%= yield %></td>
 		<td class="col-md-1"></td>
-	</table>
-
-
-
+	</table>-->
 </body>
 </html>
