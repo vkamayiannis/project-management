@@ -19,6 +19,23 @@
         <strong>Project:</strong>
         <%= @task.project.description %>
       </p>
+
+      <h3>Σχόλια</h3>
+      <% @task.comments.each do |comment| %>
+        <p>
+          <strong>Σχόλιο:</strong>
+          <%= comment.comment %>
+        </p>
+      <% end %>
+      <h4>Νέο σχόλιο:</h4>
+      <%= form_for([@task, @task.comments.build]) do |f| %>
+        <div class="field">
+          <%= f.text_area :comment, class: "form-control" %>
+        </div>
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+      <% end %>
     </div>
     <div class="modal-footer">
       <div class="actions">
