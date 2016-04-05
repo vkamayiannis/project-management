@@ -18,7 +18,7 @@
         <td><%= task.project.description if !task.project.nil? %></td>
         <td><%= link_to task.due_date.strftime("%d/%m/%Y"), task, remote: true %></td>
         <td><%= link_to task.created_at.strftime("%d/%m/%Y"), task, remote: true %></td>
-        <td><%= link_to 'Επεξεργασία', edit_task_path(task), {class: "open-tasks-edit-dialog btn btn-primary"} %></td>
+        <td><%= link_to 'Επεξεργασία', edit_task_path(task), {class: "btn btn-primary"} %></td>
         <td><%= link_to 'Διαγραφή', task, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
       </tr>
     <% end %>
