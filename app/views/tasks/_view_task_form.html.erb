@@ -19,21 +19,20 @@
         <strong>Project:</strong>
         <%= @task.project.description %>
       </p>
-
-      <h3>Σχόλια</h3>
-      <% @task.comments.each do |comment| %>
-        <p>
-          <strong>Σχόλιο:</strong>
-          <%= comment.comment %>
-        </p>
-      <% end %>
+      <hr>
+      <div id = "comments-list">
+        <%= render @comments %>
+      </div>
+      <hr>
       <h4>Νέο σχόλιο:</h4>
-      <%= form_for([@task, @task.comments.build]) do |f| %>
+      <%= form_for([@task, @task.comments.build], remote: true) do |f| %>
         <div class="field">
           <%= f.text_area :comment, class: "form-control" %>
         </div>
         <div class="actions">
-          <%= f.submit %>
+          <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+           <i class="icon-ok icon-white"></i> Save
+          <% end %>
         </div>
       <% end %>
     </div>
