@@ -45,3 +45,4 @@ gem 'will_paginate-bootstrap'
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap-datepicker-rails'
 gem 'rails_12factor', group: :production
+gem 'devise'
