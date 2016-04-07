@@ -11,7 +11,7 @@ class TasksController < ApplicationController
   # GET /tasks/1.json
   def show
     @task = Task.find(params[:id])
-    @comments = @task.comments
+    @comments = @task.comments.order(created_at: :desc)
   end
 
   # GET /tasks/new
