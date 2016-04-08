@@ -1,3 +1,4 @@
 <p>
-  <strong>Σχόλιο:</strong>(<%= comment.created_at.strftime('%d/%m/%Y %H:%M') %>)  <i> <%= simple_format(comment.comment, {}, wrapper_tag: "div") %> </i>
+  <strong><%= comment.user.email %></strong>: <%= comment.comment %><br>
+  <i>(<%= comment.created_at.strftime('%d/%m/%Y %H:%M') %>)</i>
 </p>
