@@ -14,17 +14,24 @@
           <h1>Project management</h1>
         </div>
           <div class="text-center">
-            <%= link_to 'New Task', new_task_path, class: "btn btn-primary", remote: true %>
+            <%= link_to new_task_path, class: "btn btn-primary", remote: true do %>
+              <span class="glyphicon glyphicon-plus-sign"></span>Add a task
+            <% end %>
           </div>
           <div class = "text-center">
             <strong><%= current_user.email %></strong>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+              <span class="glyphicon glyphicon-off"></span>
+            <% end %>
           </div>
           <div class = "text-center">
-            <%= link_to 'Έξοδος', destroy_user_session_path, method: :delete %>
+
           </div>
       </div>
     </div>
   </div>
-  <%= yield %>
+  <div class="container-fluid main-text">
+    <%= yield %>
+  </div>
 </body>
 </html>

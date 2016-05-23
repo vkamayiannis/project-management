@@ -15,7 +15,7 @@
     <% @tasks.each do |task| %>
       <tr>
         <td><%= link_to task.title, task, remote: true %></td>
-        <td><%= task.project.description if !task.project.nil? %></td>
+        <td><%= link_to task.project.description, task, remote: true if !task.project.nil? %></td>
         <td><%= link_to task.due_date.strftime("%d/%m/%Y"), task, remote: true %></td>
         <td><%= link_to task.created_at.strftime("%d/%m/%Y"), task, remote: true %></td>
         <td><%= link_to 'Επεξεργασία', edit_task_path(task), {class: "btn btn-primary"} %></td>
